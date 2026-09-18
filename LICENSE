@@ -1,120 +1,21 @@
-S/Agency License
-Version 1.0
+MIT License
 
-Copyright (c) 2026 S/Agency. All rights reserved.
+Copyright (c) 2026 S/Agency
 
-This repository, including all source code, documentation, assets, scripts, configurations, designs, and other materials provided here (collectively, the “Materials”), is proprietary to S/Agency and is protected by applicable copyright and other intellectual property laws.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the “Software”), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-This License applies to any person, organization, or entity that accesses, downloads, clones, copies, uses, or modifies the Materials.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-1. Ownership
-
-S/Agency retains all right, title, and interest in and to the Materials, including all associated intellectual property rights. Except for the limited permissions expressly granted by this License, no rights or licenses are granted by implication, estoppel, or otherwise.
-
-Third-party components, dependencies, trademarks, and other materials, if any, remain subject to their respective owners’ rights and applicable licenses.
-
-2. Limited License
-
-Subject to compliance with this License, S/Agency grants you a limited, non-exclusive, non-transferable, non-sublicensable, revocable license to:
-
-- view and inspect the Materials;
-- download or clone the Materials for personal, internal, educational, security-review, or evaluation purposes;
-- run the Materials in a non-production testing or development environment; and
-- modify the Materials solely for your own internal evaluation, testing, or development.
-
-These permissions do not authorize publication, redistribution, production deployment, or commercial exploitation.
-
-You may not, without S/Agency’s prior written permission:
-
-- use the Materials or derivative works for commercial purposes;
-- sell, license, sublicense, rent, host for third parties, redistribute, or otherwise make the Materials or derivative works available to third parties;
-- incorporate the Materials or derivative works into a commercial product, service, client deliverable, paid SaaS offering, or managed service;
-- claim ownership or authorship of S/Agency’s Materials;
-- remove, alter, or obscure copyright, license, trademark, provenance, or attribution notices; or
-- use the S/Agency name, trademarks, branding, or logos except as necessary to reproduce required attribution notices.
-
-3. Commercial Use
-
-Commercial use is prohibited unless S/Agency provides prior written authorization.
-
-Commercial use includes, without limitation:
-
-- selling or reselling the Materials or derivative works;
-- integrating the Materials or derivative works into a product or service offered for compensation;
-- using the Materials in a paid client project, SaaS product, consulting engagement, or other revenue-generating activity;
-- offering the Materials through a hosted, embedded, white-label, managed, or subscription-based service; or
-- using the Materials primarily to provide a commercial benefit to a third party.
-
-A separate commercial license or written permission may impose additional terms.
-
-4. Modification
-
-You may create modifications solely within the scope permitted by Section 2.
-
-Any permitted modified copy must:
-
-- retain this License and all applicable notices;
-- preserve prominent attribution to S/Agency; and
-- not be represented as an original or officially endorsed release of S/Agency.
-
-Modified versions may not be published, distributed, deployed for third-party use, or commercially exploited without prior written permission from S/Agency.
-
-5. Distribution and Public Availability
-
-The public availability of this repository permits access under this License; it does not grant permission to republish or redistribute the Materials.
-
-You may not distribute, mirror, republish, publicly post, or otherwise make available the Materials, binaries, documentation, or modified versions, in whole or in substantial part, without S/Agency’s prior written permission.
-
-This restriction does not prohibit links to the official S/Agency repository or ordinary GitHub functionality that does not create an independently distributed copy for third-party use.
-
-6. Attribution
-
-Whenever S/Agency expressly authorizes publication, distribution, or other third-party use, all copies or substantial portions must preserve this notice:
-
-“Copyright (c) 2026 S/Agency. All rights reserved.”
-
-Any additional attribution or provenance notices included in the Materials must also be preserved.
-
-7. Proprietary and Non-Public Information
-
-Publicly available Materials are not confidential merely because they are proprietary.
-
-However, if S/Agency separately provides non-public information, credentials, unreleased materials, private documentation, or other information identified as confidential in connection with the Materials, such information must be protected from unauthorized use or disclosure and may be used only for the purpose for which it was provided, except where disclosure is required by law.
-
-8. No Warranty
-
-THE MATERIALS ARE PROVIDED “AS IS” AND “AS AVAILABLE,” WITHOUT WARRANTY OF ANY KIND, EXPRESS, IMPLIED, OR STATUTORY, INCLUDING, WITHOUT LIMITATION, WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, NON-INFRINGEMENT, ACCURACY, OR RELIABILITY.
-
-S/Agency does not warrant that the Materials are free from defects, errors, vulnerabilities, or omissions, or that they will operate continuously, securely, or without interruption.
-
-9. Limitation of Liability
-
-TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL S/Agency OR ITS OWNERS, AFFILIATES, CONTRIBUTORS, OR REPRESENTATIVES BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES, OR FOR ANY LOSS OF PROFITS, REVENUE, DATA, GOODWILL, OR BUSINESS OPPORTUNITY, ARISING OUT OF OR RELATED TO THE MATERIALS OR THIS LICENSE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
-
-Nothing in this License excludes or limits liability to the extent such exclusion or limitation is prohibited by applicable law.
-
-10. Termination
-
-This License terminates automatically upon a material breach of its terms.
-
-Upon termination, you must cease exercising the permissions granted by this License and, where legally permitted, delete or destroy copies of the Materials under your control that were made under this License.
-
-Sections concerning ownership, attribution, warranty disclaimers, limitation of liability, and any provisions that by their nature should survive termination will survive.
-
-S/Agency may also revoke permissions granted separately in writing in accordance with the terms of that separate authorization.
-
-11. Governing Law
-
-This License is governed by the laws applicable to S/Agency in its place of establishment, without regard to conflict-of-law principles, unless a separate written agreement specifies otherwise.
-
-Nothing in this section prevents the application of mandatory laws that cannot lawfully be excluded.
-
-12. Acceptance and Scope
-
-By exercising any permission granted under this License, you agree to comply with its terms.
-
-If you do not agree to this License, you may view the public repository through ordinary web access, but you may not exercise the additional permissions granted by this License, including downloading, cloning, running, or modifying the Materials.
-
-For commercial licensing, redistribution, production use, or other permissions, contact S/Agency through the repository owner or another official S/Agency contact channel.
-
-End of License
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
