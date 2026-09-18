@@ -50,6 +50,26 @@ S/Crawler is being designed around the **whole loop**.
 
 ---
 
+## Benchmark Snapshot
+
+This is a **design-target comparison**, not a claim that unfinished S/Crawler capabilities have already passed execution testing. The S/Crawler score represents the target specification; implementation status is governed by the Testing Contract below.
+
+| Crawler / Tool | Score / 100 | Where it stands |
+|---|---:|---|
+| **S/Crawler — target spec** | **96** | Agent-ready crawl → structure → UI → action |
+| Firecrawl | **94** | Closest overall product/reference peer |
+| Apify Crawlee | **91** | Extremely strong programmable crawling |
+| Playwright | **88** | Excellent browser-engine foundation; not a complete crawler product |
+| Scrapy | **86** | Excellent large-scale crawling backend |
+| Selenium | **79** | Capable browser automation with a heavier stack |
+| Beautiful Soup | **68** | Excellent parser; not a complete crawler |
+| HTTrack | **61** | Strong mirroring; limited agentic extraction |
+| wget | **55** | Excellent retrieval utility; limited as a crawler platform |
+
+> **Scoring note:** these scores are an architectural/product-fit assessment against S/Crawler's intended use case, not standardized industry benchmark results. S/Crawler's 96 is explicitly a **target-spec score** until real implementation and execution evidence earn it.
+
+---
+
 ## The Level Model
 
 Depth is not an arbitrary counter.
