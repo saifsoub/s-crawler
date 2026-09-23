@@ -242,9 +242,31 @@ rather than crawling as the terminal step.
 
 ## Project Status
 
-**Specification / implementation baseline.**
+**Runnable implementation baseline.**
 
-The architecture and acceptance contract are defined. Individual implementation claims should only be promoted to “working”, “tested”, or “production-ready” after corresponding execution evidence exists.
+The repository now includes:
+- a Playwright-backed crawl engine with explicit Level 0→N traversal;
+- same-domain filtering, URL normalization, deduplication, parent/level tracking, status/error evidence;
+- a Flask `POST /crawl` API and `GET /health`;
+- unit tests and a GitHub Actions CI workflow.
+
+Run locally:
+
+```bash
+pip install -r requirements.txt
+playwright install chromium
+python app.py
+```
+
+Then:
+
+```bash
+curl -X POST http://localhost:8080/crawl \
+  -H 'Content-Type: application/json' \
+  -d '{"url":"https://example.com","max_depth":5,"same_domain":true}'
+```
+
+Implementation is now present and runnable. Production/live status still requires successful execution evidence from CI or a deployed runtime.
 
 ---
 
@@ -282,18 +304,18 @@ A contribution that makes the crawler actually crawl is the point.
 
 ## Roadmap
 
-- [ ] Implement the canonical crawl engine.
-- [ ] Wire Playwright rendering.
-- [ ] Implement Level 0→N traversal.
-- [ ] Add normalized graph/evidence schema.
-- [ ] Wire Flask API.
+- [x] Implement the canonical crawl engine.
+- [x] Wire Playwright rendering.
+- [x] Implement Level 0→N traversal.
+- [x] Add normalized graph/evidence schema.
+- [x] Wire Flask API.
 - [ ] Ship primary frontend.
 - [ ] Ship Universal Dark One.
 - [ ] Add export formats.
 - [ ] Add resumable crawl frontier.
 - [ ] Add content hashing / change detection.
 - [ ] Add agent/workflow handoff.
-- [ ] Add reproducible integration and E2E test suite.
+- [x] Add reproducible unit/CI test baseline; integration/E2E expansion remains.
 
 ---
 
