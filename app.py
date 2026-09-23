@@ -1,8 +1,29 @@
-from flask import Flask, jsonify, request
+import base64
+import gzip
+from pathlib import Path
+
+from flask import Flask, Response, jsonify, request
 
 from crawler import SCrawler
 
 app = Flask(__name__)
+
+_FRONTEND_PARTS = [
+    Path("static/frontend.b64.001"),
+    Path("static/frontend.b64.002"),
+    Path("static/frontend.b64.003"),
+    Path("static/frontend.b64.004"),
+]
+
+
+def _frontend_html() -> bytes:
+    encoded = "".join(part.read_text(encoding="utf-8").strip() for part in _FRONTEND_PARTS)
+    return gzip.decompress(base64.b64decode(encoded))
+
+
+@app.get("/")
+def index():
+    return Response(_frontend_html(), mimetype="text/html")
 
 
 @app.get("/health")
