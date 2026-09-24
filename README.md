@@ -1,254 +1,75 @@
 # S/Crawler
 
-> **A rendered, depth-aware crawler built to turn the web into structured, inspectable, agent-ready context — not another pile of downloaded HTML.**
+> **Evidence-aware cross-estate crawling for live discovery, provenance, depth, and product-state evidence.**
 
-**S/Crawler** starts at a real front end (**Level 0**), renders modern JavaScript pages, follows the graph through configurable crawl depth, structures what it finds, and exposes the result through an interface designed for humans, agents, and workflows.
-
-The target is simple:
+S/Crawler turns crawling into an inspectable evidence workflow:
 
 ```text
-URL
+Authorized estate
   ↓
-Rendered Level 0
+Live crawl
   ↓
-L1 → L2 → L3 → L4 → L5
+L0 → requested depth
   ↓
-Extract + Normalize + Deduplicate
+Normalize + deduplicate
   ↓
-Structured Evidence
+Provenance + conflicts
   ↓
-Human UI / Agent Context / Workflow Action
+Asset registry
+  ↓
+Product state + terminal outcome
 ```
 
----
+## Live product surface
 
-## Why S/Crawler?
+**Live UI:** https://s-crawler-live-5k218z.v2.appdeploy.ai/
 
-Traditional crawlers are usually optimized for one of four jobs:
+The live surface now supports:
+- multiple seed URLs;
+- configurable depth up to L10;
+- same-domain control;
+- live crawl metrics;
+- evidence-aware asset registry;
+- controlled DISCOVER → TRACE → VERIFY → RECONSTRUCT → CLASSIFY → SCORE → PACKAGE → EXPOSE stages;
+- product states and explicit terminal outcomes;
+- responsive mobile layout.
 
-- download pages;
-- parse static HTML;
-- automate a browser;
-- return data through an API.
+The hosted UI uses a live AppDeploy crawl adapter. The canonical repository engine remains the Playwright-backed Python crawler.
 
-S/Crawler is being designed around the **whole loop**.
+## Agent surface
 
-| Capability | S/Crawler target |
-|---|---|
-| JavaScript rendering | Yes |
-| Explicit crawl graph | Level 0 → Level 5+ |
-| Same-domain control | Yes |
-| URL normalization | Yes |
-| Deduplication | Yes |
-| Structured extraction | Yes |
-| Interactive frontend | Yes |
-| Backend/API wiring | Yes |
-| Human-readable evidence | Yes |
-| Agent-ready output | Yes |
-| Workflow/action handoff | Yes |
-| Real execution testing | Required |
+A private ChatGPT plugin is available for the S/Crawler operating contract:
 
----
+https://chatgpt.com/plugins/plugins_6ab4fd0de8c08191bd6f9239499856f6
 
-## Benchmark Snapshot
+The plugin preserves the evidence-aware crawl discipline: define scope, keep Level 0 explicit, preserve provenance, separate fact from inference, log conflicts, and never fabricate execution evidence.
 
-This is a **design-target comparison**, not a claim that unfinished S/Crawler capabilities have already passed execution testing. The S/Crawler score represents the target specification; implementation status is governed by the Testing Contract below.
+## AgentMarkup
 
-| Crawler / Tool | Score / 100 | Where it stands |
-|---|---:|---|
-| **S/Crawler — target spec** | **96** | Agent-ready crawl → structure → UI → action |
-| Firecrawl | **94** | Closest overall product/reference peer |
-| Apify Crawlee | **91** | Extremely strong programmable crawling |
-| Playwright | **88** | Excellent browser-engine foundation; not a complete crawler product |
-| Scrapy | **86** | Excellent large-scale crawling backend |
-| Selenium | **79** | Capable browser automation with a heavier stack |
-| Beautiful Soup | **68** | Excellent parser; not a complete crawler |
-| HTTrack | **61** | Strong mirroring; limited agentic extraction |
-| wget | **55** | Excellent retrieval utility; limited as a crawler platform |
+The live Vite surface is wired with **@agentmarkup/vite**.
 
-> **Scoring note:** these scores are an architectural/product-fit assessment against S/Crawler's intended use case, not standardized industry benchmark results. S/Crawler's 96 is explicitly a **target-spec score** until real implementation and execution evidence earn it.
+Current machine-readable output is configured to generate:
+- `llms.txt`;
+- JSON-LD WebSite metadata;
+- markdown mirrors for the client-rendered surface;
+- homepage discovery metadata.
 
----
+No AI-crawler allow/block policy or Content-Signal training policy is asserted by default.
 
-## The Level Model
+## Canonical engine
 
-Depth is not an arbitrary counter.
-
-**Level 0 is the supplied front end itself.**
-
-If the starting URL is:
-
-```text
-https://example.com/start
-```
-
-then:
-
-```text
-L0  https://example.com/start
-│
-├── L1  links discovered from L0
-│   ├── L2  links discovered from L1
-│   │   ├── L3
-│   │   │   ├── L4
-│   │   │   │   └── L5
-```
-
-A request to **crawl through Level 5** therefore means the start page plus five generations of discovered navigation — not five pages and not a depth counter whose starting page is silently called Level 1.
-
----
-
-## Architecture
-
-### Render
-
-Modern sites cannot be treated as static HTML.
-
-The browser layer is designed around **Playwright** so pages can be rendered before links and content are collected.
-
-### Crawl
-
-The crawl engine is responsible for:
-
-- breadth/depth traversal;
-- explicit level assignment;
-- same-host filtering;
-- canonical URL handling;
-- fragment removal;
-- duplicate suppression;
-- bounded depth;
-- crawl errors and status;
-- responsible site-policy handling.
-
-### Extract
-
-Every successfully visited page should produce an inspectable record such as:
-
-```json
-{
-  "url": "https://example.com/page",
-  "level": 2,
-  "title": "Example",
-  "status": 200,
-  "parent": "https://example.com/",
-  "links": [],
-  "content": {}
-}
-```
-
-Extraction is intentionally separate from navigation. A page can be crawled once and transformed for multiple downstream uses.
-
-### Serve
-
-The backend is designed as a Python service layer, with **Flask** as the initial implementation target.
-
-The frontend must call the real backend. No demo buttons wired to fake data. No hard-coded crawl results.
-
-### Present
-
-Two interface directions belong to the specification:
-
-1. **S/Crawler** — the primary interactive crawler interface.
-2. **Universal Dark One** — the same functional component model in a darker universal visual system.
-
-They are not separate crawler engines. They are two presentations of the same real crawl capability.
-
----
-
-## No Placeholders
-
-A finished surface does not contain controls that merely look operational.
-
-Before a build is called complete:
-
-- every visible action must be wired;
-- frontend requests must reach the backend;
-- backend routes must execute real crawler behavior;
-- result cards/tables/trees must be populated from execution output;
-- error states must represent real failures;
-- sample data must be clearly identified or removed;
-- dead controls and placeholder copy must be removed.
-
----
-
-## Testing Contract
-
-> **Real test means execution. Static inspection is not an execution test.**
-
-This rule is part of the project because it matters.
-
-A code review can say that a path *appears correct*. It cannot produce a legitimate PASS result for browser execution it never performed.
-
-A release report must therefore distinguish:
-
-| Evidence | May be reported as |
-|---|---|
-| Source inspection | Static review |
-| Lint/type checks | Static validation |
-| Unit test execution | Unit-test result |
-| Live HTTP request | Integration result |
-| Browser execution | Browser/E2E result |
-| Actual Level 0→5 crawl | Crawl result |
-
-**No simulated PASS/FAIL reports.**
-
-If execution is unavailable, the report says execution is unavailable.
-
----
-
-## Acceptance Contract
-
-A release candidate is not complete until it can demonstrate:
-
-- [ ] The supplied URL is recorded as **Level 0**.
-- [ ] Navigation reaches every permitted level through the requested maximum depth.
-- [ ] JavaScript-generated links are discoverable after rendering.
-- [ ] Duplicate URLs are not crawled repeatedly.
-- [ ] URL fragments and normalization do not create false pages.
-- [ ] Same-domain mode prevents unintended external traversal.
-- [ ] Page title, URL, level, parent, status, and errors are inspectable.
-- [ ] Frontend controls invoke real backend behavior.
-- [ ] No operational placeholder remains.
-- [ ] Both interface variants use the same crawler contract.
-- [ ] Failures are surfaced rather than silently converted into successes.
-- [ ] The final report is generated from **real execution evidence**.
-
----
-
-## Positioning
-
-S/Crawler is not intended to replace every specialized crawler.
-
-It is intended to compose the useful parts into an agent-ready system.
-
-| Tool | Primary strength | Relationship to S/Crawler |
-|---|---|---|
-| Firecrawl | LLM-oriented extraction APIs | Product/reference peer |
-| Crawlee | Programmable crawling framework | Engine/reference peer |
-| Playwright | Browser rendering & automation | Core engine candidate |
-| Scrapy | High-scale crawl pipelines | Backend/scale reference |
-| Beautiful Soup | HTML parsing | Parser utility |
-| wget / HTTrack | Retrieval & mirroring | Utility/reference |
-
-The differentiator is the pipeline:
-
-```text
-crawl → evidence → interface → context → action
-```
-
-rather than crawling as the terminal step.
-
----
-
-## Project Status
-
-**Runnable implementation baseline.**
-
-The repository now includes:
-- a Playwright-backed crawl engine with explicit Level 0→N traversal;
-- same-domain filtering, URL normalization, deduplication, parent/level tracking, status/error evidence;
-- a Flask `POST /crawl` API and `GET /health`;
-- unit tests and a GitHub Actions CI workflow.
+The repository implementation includes:
+- Playwright rendering;
+- explicit Level 0 → N traversal;
+- same-domain filtering;
+- URL normalization;
+- deduplication;
+- parent/level tracking;
+- Flask `POST /crawl` API;
+- `GET /health`;
+- unit tests;
+- browser/E2E coverage;
+- GitHub Actions CI.
 
 Run locally:
 
@@ -266,59 +87,69 @@ curl -X POST http://localhost:8080/crawl \
   -d '{"url":"https://example.com","max_depth":5,"same_domain":true}'
 ```
 
-Implementation is now present and runnable. Production/live status still requires successful execution evidence from CI or a deployed runtime.
+## Evidence contract
 
----
+A page record should preserve:
 
-## Contributors & Origin
+```json
+{
+  "url": "https://example.com/page",
+  "level": 2,
+  "title": "Example",
+  "status": 200,
+  "parent": "https://example.com/",
+  "links": [],
+  "error": null
+}
+```
 
-### S/Agency
-
-Product direction, crawler requirements, level model, system integration direction, and acceptance standard.
-
-### DeepSeek
-
-**Original exploration and development contributor.** DeepSeek participated in the conversation in which the crawler evolved from an initial GitHub Docs crawling request into the Level 0→5 model, browser-rendered crawler, backend/frontend integration concept, interface variants, and the requirement for real rather than simulated testing.
-
-The originating shared conversation is preserved here:
-
-https://chat.deepseek.com/share/9ix2m4km0xd3lc0d61
-
-### ChatGPT
-
-Specification consolidation, reusable project asset, architecture normalization, acceptance contract, and repository documentation.
-
----
-
-## Contribution Principle
-
-Contributions are welcome when they improve **real behavior**, evidence quality, interoperability, or usability.
-
-A contribution that adds a button without wiring it is not finished.
-
-A contribution that adds a test badge without running a test is not evidence.
-
-A contribution that makes the crawler actually crawl is the point.
-
----
-
-## Roadmap
-
-- [x] Implement the canonical crawl engine.
-- [x] Wire Playwright rendering.
-- [x] Implement Level 0→N traversal.
-- [x] Add normalized graph/evidence schema.
-- [x] Wire Flask API.
-- [ ] Ship primary frontend.
-- [ ] Ship Universal Dark One.
-- [ ] Add export formats.
-- [ ] Add resumable crawl frontier.
-- [ ] Add content hashing / change detection.
-- [ ] Add agent/workflow handoff.
-- [x] Add reproducible unit/CI test baseline; integration/E2E expansion remains.
-
----
-
-## One rule
+A finished result must distinguish:
+- static inspection;
+- unit execution;
+- live HTTP integration;
+- browser execution;
+- actual crawl execution.
 
 **If the crawler did not run, we do not say it ran.**
+
+## Acceptance
+
+A release candidate should demonstrate:
+
+- [x] Level 0 is the supplied seed.
+- [x] Configurable depth traversal.
+- [x] JavaScript-aware canonical Playwright engine.
+- [x] URL normalization and fragment removal.
+- [x] Deduplication.
+- [x] Same-domain control.
+- [x] Inspectable title, URL, level, parent, status, and errors.
+- [x] Frontend wired to a real backend.
+- [x] Live public product surface.
+- [x] Browser/E2E test coverage.
+- [x] AgentMarkup machine-readable surface.
+- [x] ChatGPT S/Crawler plugin.
+- [ ] Export formats.
+- [ ] Resumable crawl frontier.
+- [ ] Content hashing / change detection.
+
+## Positioning
+
+S/Crawler is not trying to replace every crawler. It composes crawling with evidence, provenance, product state, and action.
+
+| Tool | Primary strength | Relationship to S/Crawler |
+|---|---|---|
+| Firecrawl | LLM-oriented extraction and managed crawling | Product/reference peer |
+| Crawlee | Programmable crawling framework | Engine/reference peer |
+| Playwright | Browser rendering and automation | Canonical browser-engine foundation |
+| Scrapy | High-scale crawling pipelines | Scale reference |
+| Beautiful Soup | HTML parsing | Parser utility |
+
+The differentiator is the loop:
+
+```text
+crawl → evidence → provenance → state → action
+```
+
+## Ownership
+
+Owned and maintained by S/Agency by Seif Alsoub.
