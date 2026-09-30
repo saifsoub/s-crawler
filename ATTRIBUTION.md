@@ -1,6 +1,6 @@
 # Attribution
 
-S/Crawler is directed by **S/Agency**.
+Crawler is directed by **Agency**.
 
 The original crawler exploration and early implementation discussion included **DeepSeek** as a development contributor.
 
