@@ -1,6 +1,6 @@
-# Contributing to S/Crawler
+# Contributing to Crawler
 
-S/Crawler values executable behavior and inspectable evidence.
+Crawler values executable behavior and inspectable evidence.
 
 ## Ground rules
 
