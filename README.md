@@ -1,8 +1,8 @@
-# S/Crawler
+# Crawler
 
 > **Evidence-aware cross-estate crawling for live discovery, provenance, depth, and product-state evidence.**
 
-S/Crawler turns crawling into an inspectable evidence workflow:
+Crawler turns crawling into an inspectable evidence workflow:
 
 ```text
 Authorized estate
@@ -38,7 +38,7 @@ The hosted UI uses a live AppDeploy crawl adapter. The canonical repository engi
 
 ## Agent surface
 
-A private ChatGPT plugin is available for the S/Crawler operating contract:
+A private ChatGPT plugin is available for the Crawler operating contract:
 
 https://chatgpt.com/plugins/plugins_6ab4fd0de8c08191bd6f9239499856f6
 
@@ -127,16 +127,16 @@ A release candidate should demonstrate:
 - [x] Live public product surface.
 - [x] Browser/E2E test coverage.
 - [x] AgentMarkup machine-readable surface.
-- [x] ChatGPT S/Crawler plugin.
+- [x] ChatGPT Crawler plugin.
 - [ ] Export formats.
 - [ ] Resumable crawl frontier.
 - [ ] Content hashing / change detection.
 
 ## Positioning
 
-S/Crawler is not trying to replace every crawler. It composes crawling with evidence, provenance, product state, and action.
+Crawler is not trying to replace every crawler. It composes crawling with evidence, provenance, product state, and action.
 
-| Tool | Primary strength | Relationship to S/Crawler |
+| Tool | Primary strength | Relationship to Crawler |
 |---|---|---|
 | Firecrawl | LLM-oriented extraction and managed crawling | Product/reference peer |
 | Crawlee | Programmable crawling framework | Engine/reference peer |
@@ -152,4 +152,4 @@ crawl → evidence → provenance → state → action
 
 ## Ownership
 
-Owned and maintained by S/Agency by Seif Alsoub.
+Owned and maintained by the project maintainers.
