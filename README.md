@@ -1,6 +1,6 @@
 # Crawler
 
-> **Evidence-aware cross-estate crawling for live discovery, provenance, depth, and product-state evidence.**
+> **Evidence-aware cross-estate crawling for live discovery, source history, depth, and product-state evidence.**
 
 Crawler turns crawling into an inspectable evidence workflow:
 
@@ -42,7 +42,7 @@ A private ChatGPT plugin is available for the Crawler operating contract:
 
 https://chatgpt.com/plugins/plugins_6ab4fd0de8c08191bd6f9239499856f6
 
-The plugin preserves the evidence-aware crawl discipline: define scope, keep Level 0 explicit, preserve provenance, separate fact from inference, log conflicts, and never fabricate execution evidence.
+The plugin preserves the evidence-aware crawl discipline: define scope, keep Level 0 explicit, preserve source history, separate fact from inference, log conflicts, and never fabricate execution evidence.
 
 ## AgentMarkup
 
@@ -134,7 +134,7 @@ A release candidate should demonstrate:
 
 ## Positioning
 
-Crawler is not trying to replace every crawler. It composes crawling with evidence, provenance, product state, and action.
+Crawler is not trying to replace every crawler. It composes crawling with evidence, source history, product state, and action.
 
 | Tool | Primary strength | Relationship to Crawler |
 |---|---|---|
